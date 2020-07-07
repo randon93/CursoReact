@@ -1,17 +1,36 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+import { getHeroeById } from "./bases/08-export-import";
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+// const promesa = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         const heroe = getHeroeById(2);
+//         resolve(heroe);
+//        // reject("No se encontro el heroe");
+//     }, 2000);
+// });
+
+// promesa.then((heroe) => {
+//     console.log("El heroe es ", heroe);
+// })
+//     .catch(err => console.warn(err));
+
+
+const getHeroeByIdAsync = (id) => {
+    
+    return new Promise( (resolved, reject) => { 
+        setTimeout( () => {
+            const h = getHeroeById(id);
+            if(h) {
+                resolved(h);
+            }
+            else {
+                reject("Heroe no existe");
+            }
+            
+        }, 2000);
+    });
+}
+
+getHeroeByIdAsync(2)
+    .then(console.log)
+    .catch( console.warn);
