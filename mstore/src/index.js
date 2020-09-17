@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import PrimeraApp from './PrimeraApp'
+import CounterApp from './CounterApp'
 
 const divRoot = document.querySelector("#root");
 
-ReactDOM.render(<PrimeraApp />, divRoot);
+ReactDOM.render(<CounterApp value="Los Mejores productos para ti."/>, divRoot);

@@ -1,0 +1,2 @@
+rafcp => creates a React Function Component con props.
+
