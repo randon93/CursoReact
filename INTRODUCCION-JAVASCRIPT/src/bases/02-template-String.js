@@ -6,10 +6,10 @@ ${nombre}
 ${apellido}
  `;
 
-console.log(nombreCOmpleto);
+// console.log(nombreCOmpleto);
 
-function getSaludo(nombre) {
+export function getSaludo(nombre = 'Javier') {
     return "hola " + nombre
 }
 
-console.log(` ${getSaludo("Javier")}`)
+// console.log(` ${getSaludo("Javier")}`)

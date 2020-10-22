@@ -1,15 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
 
 class TodoApp extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { items: [
-        {
-            text: "Tarea de ejemplo",
-            id: Date.now(),
-        },
-    ], text: "" };
+    this.state = { items: ["HOLA"], text: "" };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -49,34 +43,19 @@ class TodoApp extends React.Component {
       items: state.items.concat(newItem),
       text: "",
     }));
-  }  
+  }
 }
 
 class TodoList extends React.Component {
-
-    elminar(id) {
-        const items = this.props.items;
-        items.map( item => {
-            if (item.id === id) {
-                items.splice(items.indexOf(item), 1);
-                return 1;
-            }
-            return 1;
-        });
-    } 
-
   render() {
     return (
       <ul>
         {this.props.items.map((item) => (
-        <>
           <li key={item.id}>{item.text}</li>
-          <button onDoubleClick={this.elminar(item.id)}>Eliminar</button>
-        </>
         ))}
       </ul>
     );
   }
 }
 
-ReactDOM.render(<TodoApp />, document.getElementById("root"));
+ReactDOM.render(<TodoApp />, document.getElementById("todos-example"));

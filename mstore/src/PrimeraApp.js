@@ -1,21 +1,21 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const PrimeraApp = ( { value } ) => {
+const PrimeraApp = ( { value, parrafo } ) => {
     return (
         <div>
             <h1>ConuterApp</h1>
             <h2>{ value }</h2>
-
-            <button onClick={ ()=>{
-                
-            } }>Click aca perros +1 </button>
+            <p>{ parrafo }</p>
         </div>
     )
 }
 
 PrimeraApp.propTypes = {
-    value: PropTypes.number
+    value: PropTypes.string
+}
+PrimeraApp.defaultProps = {
+    parrafo: 'ACA VA UN PARRFO'
 }
 
 export default PrimeraApp;

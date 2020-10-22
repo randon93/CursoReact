@@ -1,11 +1,17 @@
 
 //Function
 
-const usuario =  (nombre) => (
+export const usuario =  () => (
     {
         nombre: "Brandon",
         apellido: "garcia"
     }
-)
+);
 
-console.table(usuario("Brandon")); 
+export const getUsuario = ( trabajo ) => ({
+    nombre: 'Javier',
+    apellido: 'Garcial',
+    trabajo: trabajo
+});
+
+// console.table(usuario("Brandon")); 
